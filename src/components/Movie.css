@@ -1,8 +1,8 @@
-.Main h1 {
+.Movie h1 {
     color: orange;
 }
 
-.Main .card {
+.Movie  {
     max-width: 80%;
     margin: 1rem auto;
     padding: 1rem;
@@ -11,7 +11,7 @@
     transition: 0.4s;
 }
 
-.Main .card:hover {
+.Movie :hover {
     cursor: pointer;
     box-shadow: 5px 5px 15px 0px;
 }

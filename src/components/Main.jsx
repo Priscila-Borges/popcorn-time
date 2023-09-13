@@ -1,6 +1,7 @@
 import { useState } from "react";
 import movies from "../data/movies.json";
-import "./Main.css";
+import Movie from "../components/Movie"
+
 
 function Main() {
 
@@ -29,26 +30,11 @@ function Main() {
 
             {moviesToDisplay.map((movie) => {
                 return (
-                    <section key={movie.id} className="card">
-                        <h2>{movie.title}</h2>
-
-                        {movie.imgURL
-                            ? <img src={movie.imgURL} />
-                            : <img src="https://dummyimage.com/182x268/ffffff/000000" />
-                        }
-
-                        <h3>Rating {movie.rating}</h3>
-                        <h3>Year: {movie.year}</h3>
-                        <h3>Genres: {[movie.genres[0]]} {[movie.genres[1]]}</h3>
-
-                        {movie.rating > 8 && <p>RECOMMENDED</p>}
-
-                        <button onClick={() => { deleteMovie(movie.id) }}>Delete</button>
-                    </section>
+                    <Movie movieDetails ={movie} callbackToDelete= {deleteMovie}/>
                 )
             })}
         </div>
-    )
+    );
 }
 
 export default Main;
