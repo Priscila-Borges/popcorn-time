@@ -4,22 +4,22 @@ function Movie(props) {
 
     
     return (
-        <section key={props.movieDetails.id} className="Movie">
+        <section className="Movie">
 
-            <h2>{props.movieDetails.title}</h2>
+            <h2>{props.movies.title}</h2>
 
-            {props.movieDetails.imgURL
-                ? <img src={props.movieDetails.imgURL} />
+            {props.movies.imgURL
+                ? <img src={props.movies.imgURL} />
                 : <img src="https://dummyimage.com/182x268/ffffff/000000" />
             }
 
-            <h3>Rating {props.movieDetails.rating}</h3>
-            <h3>Year: {props.movieDetails.year}</h3>
-            <h3>Genres: {[props.movieDetails.genres[0]]} {[props.movieDetails.genres[1]]}</h3>
+            <h3>Rating {props.movies.rating}</h3>
+            <h3>Year: {props.movies.year}</h3>
+            <h3>Genres: {[props.movies.genres[0]]} {[props.movies.genres[1]]}</h3>
 
-            {props.movieDetails.rating > 8 && <p>RECOMMENDED</p>}
+            {props.movies.rating > 8 && <p>RECOMMENDED</p>}
 
-            <button onClick={() => { props.callbackToDelete(props.movieDetails.id) }}>Delete</button>
+            <button onClick={() => { props.callbackToDelete(props.movies.id) }}>Delete</button>
         </section>
     )
 }
